@@ -1,0 +1,928 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>HERMOIT · Catálogo y Cotizador MSP 2026-27</title><link rel="icon" href="data:,">
+<style>
+:root{--bg:#f8fafc;--cd:#fff;--bd:#e2e8f0;--tx:#1e293b;--mu:#64748b;--pr:#0284c7;--pl:#e0f2fe;--ok:#16a34a;--wa:#d97706;--er:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f172a;--cd:#1e293b;--bd:#334155;--tx:#e2e8f0;--mu:#94a3b8;--pl:#0c4a6e}}
+:root[data-theme="dark"]{--bg:#0f172a;--cd:#1e293b;--bd:#334155;--tx:#e2e8f0;--mu:#94a3b8;--pl:#0c4a6e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:14px 18px;background:#0f172a;color:#fff;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}header b{font-size:1.1rem}header small{color:#94a3b8;display:block}
+nav{display:flex;gap:4px;overflow-x:auto;padding:8px 12px;background:var(--cd);border-bottom:1px solid var(--bd)}nav button{white-space:nowrap;border:0;background:none;color:var(--mu);padding:8px 14px;border-radius:8px;font:600 .9rem inherit;cursor:pointer}nav button.on{background:var(--pr);color:#fff}
+main{padding:16px;max-width:1100px;margin:auto}.tab{display:none}.tab.on{display:block}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:14px}.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+h2{margin:0 0 10px;font-size:1.1rem}h3{margin:0 0 6px}.mu{color:var(--mu);font-size:.85rem}.big{font-size:1.6rem;font-weight:800}
+.tag{display:inline-block;background:var(--pl);color:var(--pr);border-radius:20px;padding:2px 10px;font-size:.75rem;font-weight:700}
+.tag-ok{background:#dcfce7;color:#15803d}.tag-wa{background:#fef3c7;color:#d97706}.tag-er{background:#fee2e2;color:#b91c1c}
+input,select,textarea{width:100%;padding:8px 10px;border:1px solid var(--bd);border-radius:6px;background:var(--cd);color:var(--tx);font:inherit}textarea{min-height:60px;resize:vertical}label{font-size:.8rem;font-weight:600;color:var(--mu);display:block;margin-bottom:3px}
+button.b{background:var(--pr);color:#fff;border:0;border-radius:6px;padding:9px 16px;font:600 .9rem inherit;cursor:pointer}button.s{background:var(--bd);color:var(--tx)}button.ok{background:var(--ok);color:#fff}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:7px 9px;border-bottom:1px solid var(--bd);text-align:left}th{color:var(--mu);font-size:.78rem;text-transform:uppercase}td input{min-width:70px}
+ul{margin:6px 0;padding-left:18px}.ok{color:var(--ok);font-weight:700}.wa{color:var(--wa);font-weight:700}.er{color:var(--er);font-weight:700}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}.ck input{width:auto;margin-top:4px}
+.scomp{border-left:3px solid var(--pr);padding:10px 14px;margin-bottom:10px;background:var(--bg);border-radius:0 8px 8px 0}
+.scomp h4{margin:0 0 6px;font-size:.95rem;display:flex;align-items:center;gap:8px}
+.scomp ul{margin:4px 0;padding-left:16px}.scomp li{font-size:.87rem;margin-bottom:3px}
+.note{background:#fef9c3;border:1px solid #fde047;border-radius:6px;padding:8px 12px;font-size:.83rem;color:#713f12;margin-top:6px}
+.pitch{background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:10px 14px;font-size:.87rem;color:#14532d;margin-top:12px}
+.subplan-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.sla-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin:10px 0}
+.sla-box{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:10px;text-align:center}
+.sla-box .val{font-size:1.1rem;font-weight:800;color:var(--pr)}.sla-box .lbl{font-size:.75rem;color:var(--mu)}
+.na-sec{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:12px;margin-bottom:10px}
+.na-sec h4{margin:0 0 10px;font-size:.95rem;border-bottom:1px solid var(--bd);padding-bottom:6px}
+.na-grid{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.risk-bar{height:14px;border-radius:7px;background:#e2e8f0;overflow:hidden;margin:6px 0}
+.risk-fill{height:100%;border-radius:7px;transition:width .5s}
+.role-vendedor [data-t=cos],.role-vendedor [data-t=rent],.role-vendedor #cos,.role-vendedor #rent,.role-vendedor #int{display:none!important}
+.recom{border:2px solid var(--ok)}.pline{display:flex;gap:8px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}.pline.off{opacity:.45;text-decoration:line-through}.pline input[type=checkbox]{width:auto;margin-top:4px}
+@media print{.pline.off{display:none}.pline input[type=checkbox]{display:none}header,nav,.np{display:none!important}body{background:#fff;color:#000}.card{border:1px solid #ccc}body{font-size:12px}}
+</style></head><body>
+<div id="login" style="position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px"><div class="card" style="max-width:360px;width:100%;margin:0"><h2>HERMOIT · Acceso</h2><label>Correo</label><input id="lemail" type="email" autocomplete="username"><div style="height:8px"></div><label>Contraseña</label><input id="lpass" type="password" autocomplete="current-password"><div style="height:12px"></div><button class="b" id="lgo" style="width:100%">Entrar</button><p class="er" id="lerr"></p></div></div>
+<header><div><b>HERMOIT · Catálogo y Cotizador MSP</b><small>Texas (Valle · San Antonio · DFW · Houston) + filiales en Nuevo León · Chihuahua · Coahuila · Tamaulipas</small></div><div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><span id="who" class="mu" style="color:#cbd5e1"></span><span class="mu" id="st" style="color:#94a3b8">Cargando…</span><button class="b s np" id="lout" style="padding:5px 10px">Salir</button></div></header>
+<nav id="nav">
+  <button data-t="cat" class="on">📦 Catálogo</button>
+  <button data-t="det">📋 Catálogo Detallado</button>
+  <button data-t="cot">🧮 Cotizador</button>
+  <button data-t="cos">💰 Costos USA</button>
+  <button data-t="rent">📈 Rentabilidad</button>
+  <button data-t="cam">🎯 Campaña Valle</button>
+  <button data-t="pip">👥 Pipeline</button>
+  <button data-t="na">🔍 Network Assessment</button>
+  <button data-t="prop">📄 Propuesta</button>
+</nav>
+<main>
+
+<!-- ==================== TAB: CATÁLOGO RÁPIDO ==================== -->
+<section class="tab on" id="cat">
+  <div class="card np" style="display:flex;gap:12px;flex-wrap:wrap;align-items:end">
+    <div style="min-width:220px"><label>Territorio</label><select id="ct"></select></div>
+    <div style="min-width:220px"><label>Vertical</label><select id="cv"></select></div>
+  </div>
+  <div class="g" id="plans"></div>
+  <div class="card">
+    <h2>Precio por usuario/mes según vertical</h2>
+    <div class="tw"><table id="vm"></table></div>
+    <p class="mu">Precios de lista antes de impuestos. Referencia: Plan Maestro 2026-27 × factor territorio. Promedio mercado USA: $147/usuario Estándar (Kaseya 2026). Territorios en México: MXN + IVA, pensados para filiales. Clientes actuales de HERMOIT MEXICO: Nuevo León, Coahuila y Chihuahua (Tamaulipas aún sin clientes). Factores por territorio y tipo de cambio se editan en Costos.</p>
+  </div>
+  <div class="card"><h2>Servicios adicionales y proyectos</h2><div class="tw"><table id="ad"></table></div></div>
+</section>
+
+<!-- ==================== TAB: CATÁLOGO DETALLADO ==================== -->
+<section class="tab" id="det">
+  <div class="card">
+    <h2>Catálogo Descriptivo de Servicios · Uso interno de vendedor y técnico</h2>
+    <p class="mu">Descripción profunda de cada paquete para explicar al prospecto. Incluye talking points, datos de mercado USA 2026 y lo que NO está incluido. Selecciona el plan:</p>
+    <div class="subplan-nav" id="detnav">
+      <button class="b" data-dp="0">Estándar</button>
+      <button class="b s" data-dp="1">Avanzado</button>
+      <button class="b s" data-dp="2">Premium</button>
+    </div>
+    <div id="detpane"></div>
+  </div>
+</section>
+
+<!-- ==================== TAB: COTIZADOR ==================== -->
+<section class="tab" id="cot">
+  <div class="g">
+    <div class="card np">
+      <h2>Datos del cliente</h2>
+      <label>Empresa</label><input id="qn" placeholder="Nombre del prospecto"><div style="height:8px"></div>
+      <label>Territorio</label><select id="terr"></select><div style="height:8px"></div>
+      <label>Vertical</label><select id="vert"></select><div style="height:8px"></div>
+      <label>Paquete</label><select id="plan"></select><div style="height:8px"></div>
+      <label>Usuarios</label><input id="users" type="number" min="1" value="12"><div style="height:8px"></div>
+      <label><input type="checkbox" id="fil" style="width:auto"> Incluir filial / segunda sede (otro país o territorio)</label>
+      <div id="fbox" style="display:none"><div style="height:8px"></div><label>Territorio de la filial</label><select id="terr2"></select><div style="height:8px"></div><label>Usuarios en la filial</label><input id="users2" type="number" min="1" value="10"></div><div style="height:8px"></div>
+      <label>Descuento comercial %</label><input id="disc" type="number" min="0" max="40" value="0"><div style="height:8px"></div>
+      <label><input type="checkbox" id="onb" checked style="width:auto"> Cobrar onboarding (1 mes de cuota)</label>
+    </div>
+    <div class="card np"><h2>Adicionales (cantidad)</h2><div id="adq"></div></div>
+  </div>
+  <div class="card" id="out"></div>
+  <div class="card np" id="int"></div>
+  <div class="np" style="display:flex;gap:10px;flex-wrap:wrap">
+    <button class="b" onclick="window.print()">🖨️ Imprimir / PDF</button>
+    <button class="b s" id="cp">📋 Copiar para WhatsApp</button>
+  </div>
+</section>
+
+<!-- ==================== TAB: COSTOS USA ==================== -->
+<section class="tab" id="cos">
+  <div class="card">
+    <h2>Costos operativos y administrativos USA (USD/mes)</h2>
+    <p class="mu">Esquema con el socio: su empresa nos factura y HERMOIT cobra al cliente final. Oficina al 50/50; mano de obra en negociación. "% HERMOIT" = parte que paga HERMOIT. Se guarda en BD local y alimenta Cotizador y Rentabilidad.</p>
+    <div class="np" style="margin-bottom:10px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="b s" data-esc="100">Arranque: M.O. 100% HERMOIT</button>
+      <button class="b s" data-esc="50">Negociado: M.O. 50/50</button>
+    </div>
+    <div class="tw"><table id="cost"></table></div>
+    <p class="big" id="ctot"></p>
+  </div>
+  <div class="g">
+    <div class="card">
+      <h2>Parámetros</h2>
+      <label>Tipo de cambio USD → MXN (filiales en México)</label><input id="fx" type="number" step=".01"><div style="height:8px"></div>
+      <label>Margen de contribución objetivo %</label><input id="tm" type="number"><div style="height:8px"></div>
+      <label>Cuota mínima mensual (USD)</label><input id="mf" type="number"><div style="height:8px"></div>
+      <label>Facturación del socio a HERMOIT % del ingreso (por definir)</label><input id="com" type="number"><div style="height:8px"></div><label>Factor de precio por territorio (1 = lista)</label><div id="tfs"></div>
+    </div>
+    <div class="card">
+      <h2>Costo variable por usuario (USD/mes)</h2>
+      <p class="mu">Herramientas + tiempo técnico. Rango mercado USA 2026: $25-$60 Estándar · $45-$80 Avanzado · $70-$100 Premium.</p>
+      <label>Estándar</label><input class="vc" data-i="0" type="number"><div style="height:8px"></div>
+      <label>Avanzado</label><input class="vc" data-i="1" type="number"><div style="height:8px"></div>
+      <label>Premium</label><input class="vc" data-i="2" type="number">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TAB: RENTABILIDAD ==================== -->
+<section class="tab" id="rent">
+  <div class="card">
+    <h2>Simulador de cartera</h2>
+    <div class="g">
+      <div><label>Clientes Estándar</label><input class="rm" id="r0" type="number" value="3"></div>
+      <div><label>Clientes Avanzado</label><input class="rm" id="r1" type="number" value="2"></div>
+      <div><label>Clientes Premium</label><input class="rm" id="r2" type="number" value="1"></div>
+      <div><label>Usuarios por cliente (promedio)</label><input class="rm" id="ru" type="number" value="10"></div>
+    </div>
+  </div>
+  <div class="g" id="rr"></div>
+</section>
+
+<!-- ==================== TAB: CAMPAÑA VALLE ==================== -->
+<section class="tab" id="cam">
+  <div class="g">
+    <div class="card">
+      <h2>✅ Checklist de arranque (Oct 2026 → Ene 2027)</h2>
+      <div id="chk"></div>
+    </div>
+    <div class="card">
+      <h2>🎣 Oferta gancho</h2>
+      <p><span class="tag">Network Assessment gratuito</span></p>
+      <p>Auditoría de red e infraestructura sin costo para exportadoras, logística y clínicas de McAllen–Harlingen–Laredo. Sirve para entrar, medir el entorno y cotizar con datos reales. El reporte que se entrega cierra ventas en el primer contacto.</p>
+      <h2>🎯 Mensaje por vertical</h2>
+      <ul>
+        <li><b>Logística / exportadoras:</b> soporte bilingüe para operaciones a ambos lados de la frontera; SD-WAN, CCTV de patio y uptime garantizado. → Avanzado.</li>
+        <li><b>Clínicas / salud:</b> HIPAA/TDPSA, cifrado y respaldo de expedientes, BAA incluido. → Avanzado o Premium.</li>
+        <li><b>Servicios / PyME:</b> M365 administrado, Help Desk rápido en inglés y español, antivirus. → Estándar.</li>
+        <li><b>Empresas con filiales (Monterrey, Saltillo, Cd. Juárez, Reynosa...):</b> una sola cotización binacional, soporte bilingüe y políticas de seguridad homogéneas a ambos lados. En el Cotizador activa "filial / segunda sede".</li>
+        <li><b>Manufactura / nearshore:</b> redes OT/IT, uptime 99.99%, SOC y compliance ISO. → Premium.</li>
+      </ul>
+      <h2>💬 Objeciones frecuentes</h2>
+      <ul>
+        <li><b>"Ya tengo un técnico":</b> ofrecemos co-gestión; sumamos monitoreo 24/7 y seguridad sin reemplazar a nadie.</li>
+        <li><b>"Es caro":</b> comparar la cuota con el costo de un día sin sistemas ($5K–$50K típico en PyME) o un ransomware ($3.31M promedio IBM 2025).</li>
+        <li><b>"¿Están cerca?":</b> visitas en sitio incluidas en el plan, soporte en inglés y español.</li>
+        <li><b>"Tengo mi proveedor actual":</b> hacemos el Network Assessment gratuito y el reporte habla por sí solo.</li>
+      </ul>
+      <h2>🏢 Quién hace qué</h2>
+      <ul><li><b>HERMOIT MEXICO:</b> parte operativa remota y labor local en México y USA.</li><li><b>HERMOIT LLC y MA3IX:</b> contratan a HERMOIT MEXICO para esa operación.</li><li><b>Clientes actuales de HERMOIT MEXICO:</b> Nuevo León, Coahuila y Chihuahua.</li></ul>
+      <h2>📊 Datos de mercado para cierres</h2>
+      <ul>
+        <li>El 58% de contratos MSP 2026 se firman en nivel Estándar con EDR incluido (NinjaOne 2026).</li>
+        <li>HERMOIT price punto en Valle: 15-25% por debajo de proveedores locales de DFW/Houston.</li>
+        <li>Promedio nacional USA Estándar: $147/usuario (Kaseya 2026). HERMOIT: $110-$145.</li>
+        <li>MSPs con Network Assessment gratuito cierran 2.3× más rápido que los que solo envían propuesta (ConnectWise 2025).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="tab" id="pip">
+  <div class="g" id="pk"></div>
+  <div class="card np"><h2>➕ Nuevo prospecto</h2><div class="na-grid">
+    <div><label>Empresa</label><input id="pc"></div>
+    <div><label>Contacto</label><input id="pct"></div>
+    <div><label>Teléfono / WhatsApp</label><input id="pph"></div>
+    <div><label>Ciudad</label><input id="pci" placeholder="McAllen, Harlingen, Laredo..."></div>
+    <div><label>Vertical</label><select id="pv"></select></div>
+    <div><label>Territorio</label><select id="pt"></select></div>
+    <div><label>Paquete de interés</label><select id="pp"></select></div>
+    <div><label>Usuarios estimados</label><input id="pu" type="number" min="1" value="10"></div>
+    <div><label>Filial en el otro país</label><select id="pfi"><option value="">No / no sé</option><option>Filial en México</option><option>Filial en USA</option></select></div>
+  </div><div style="margin-top:10px"><button class="b" data-padd="1">Agregar al pipeline</button></div></div>
+  <div class="card"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px"><h2 style="margin:0">Prospectos</h2><div style="min-width:200px"><select id="pf"></select></div></div><div class="tw"><table id="pl"></table></div></div>
+</section>
+
+<section class="tab" id="prop"><div id="propbody"><div class="card"><p class="mu">Genera la propuesta desde la pestaña Network Assessment.</p></div></div></section>
+
+<!-- ==================== TAB: NETWORK ASSESSMENT ==================== -->
+<section class="tab" id="na">
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+      <div>
+        <h2 style="margin:0">🔍 Network Assessment Gratuito</h2>
+        <p class="mu" style="margin:4px 0 0">Formulario profesional para visita en sitio · Los datos se guardan localmente y generan un resumen para el prospecto</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="b s" id="naClear">Nueva evaluación</button>
+        <button class="b" data-gen="1">📄 Generar propuesta recomendada</button>
+        <button class="b ok" id="naExport">📋 Copiar resumen</button>
+        <button class="b" onclick="window.print()">🖨️ Imprimir</button>
+      </div>
+    </div>
+    <!-- SCORE BAR -->
+    <div id="naScore" style="margin-bottom:14px"></div>
+
+    <!-- SECTION 1: DATOS GENERALES -->
+    <div class="na-sec">
+      <h4>1. Información general del prospecto</h4>
+      <div class="na-grid">
+        <div><label>Empresa</label><input class="naf" data-k="company" placeholder="Nombre de la empresa"></div>
+        <div><label>Contacto y cargo</label><input class="naf" data-k="contact" placeholder="Nombre · Director de Ops, IT Manager..."></div>
+        <div><label>Teléfono / WhatsApp</label><input class="naf" data-k="phone" placeholder="+1 (956) ..."></div>
+        <div><label>Email</label><input class="naf" data-k="email" type="email" placeholder="correo@empresa.com"></div>
+        <div><label>Dirección / Ciudad</label><input class="naf" data-k="address" placeholder="McAllen, TX · Laredo · Harlingen..."></div>
+        <div><label>Giro / industria</label><input class="naf" data-k="industry" placeholder="Logística, salud, manufactura, servicios..."></div>
+        <div><label>Número de empleados</label><input class="naf" data-k="employees" type="number" placeholder="0"></div>
+        <div><label>Sucursales / sitios</label><input class="naf" data-k="locations" type="number" placeholder="1"></div>
+        <div><label>¿Tiene filiales u operaciones en el otro país?</label><select class="naf" data-k="cross"><option value="">— Seleccionar —</option><option>No</option><option>Sí, filial en México</option><option>Sí, matriz o filial en USA</option></select></div>
+        <div><label>Ciudades / estados de la filial</label><input class="naf" data-k="cross_where" placeholder="Monterrey, Saltillo, Cd. Juárez, Reynosa..."></div>
+        <div><label>Territorio de cotización</label><select class="naf" data-k="terr"></select></div>
+        <div><label>Vertical</label><select class="naf" data-k="vert"></select></div>
+        <div><label>Evaluación realizada por</label><input class="naf" data-k="assessed_by" placeholder="Vendedor / Técnico"></div>
+        <div><label>Fecha</label><input class="naf" data-k="na_date" type="date"></div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: INVENTARIO HARDWARE -->
+    <div class="na-sec">
+      <h4>2. Inventario de hardware</h4>
+      <div class="na-grid">
+        <div><label>Workstations de escritorio</label><input class="naf nar" data-k="workstations" type="number" placeholder="0"></div>
+        <div><label>Laptops</label><input class="naf nar" data-k="laptops" type="number" placeholder="0"></div>
+        <div><label>Servidores físicos</label><input class="naf nar" data-k="servers" type="number" placeholder="0"></div>
+        <div><label>VMs / Servidores virtuales</label><input class="naf nar" data-k="vms" type="number" placeholder="0"></div>
+        <div><label>Impresoras en red</label><input class="naf" data-k="printers" type="number" placeholder="0"></div>
+        <div><label>Teléfonos IP / extensiones</label><input class="naf" data-k="phones" type="number" placeholder="0"></div>
+        <div><label>Edad promedio de equipos</label>
+          <select class="naf nar" data-k="hw_age" data-risk="0,0,1,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Menos de 2 años</option>
+            <option value="0">2 a 4 años</option>
+            <option value="1">4 a 6 años</option>
+            <option value="3">Más de 6 años (EOL)</option>
+          </select>
+        </div>
+        <div><label>¿Equipos con garantía vigente?</label>
+          <select class="naf nar" data-k="hw_warranty" data-risk="0,1,2,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, todos</option>
+            <option value="1">Algunos</option>
+            <option value="2">La mayoría no</option>
+            <option value="3">No sé</option>
+          </select>
+        </div>
+        <div style="grid-column:1/-1"><label>Equipos especiales o críticos (CNC, médicos, POS, etc.)</label><textarea class="naf" data-k="hw_special" placeholder="Describir si aplica..."></textarea></div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: RED E INFRAESTRUCTURA -->
+    <div class="na-sec">
+      <h4>3. Infraestructura de red</h4>
+      <div class="na-grid">
+        <div><label>Proveedor de internet (ISP)</label><input class="naf" data-k="isp" placeholder="AT&T, Spectrum, Grande..."></div>
+        <div><label>Velocidad contratada</label><input class="naf" data-k="bandwidth" placeholder="100 Mbps, 1 Gbps..."></div>
+        <div><label>¿Tienen enlace de respaldo (failover)?</label>
+          <select class="naf nar" data-k="failover" data-risk="0,2">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí (fibra secundaria, 4G, Starlink)</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+        <div><label>Firewall / Router principal</label><input class="naf" data-k="firewall" placeholder="Fortinet, SonicWall, Cisco, Router del ISP..."></div>
+        <div><label>Número de switches administrables</label><input class="naf" data-k="switches" type="number" placeholder="0"></div>
+        <div><label>Número de Access Points WiFi</label><input class="naf" data-k="aps" type="number" placeholder="0"></div>
+        <div><label>¿Tienen VLAN o segmentación de red?</label>
+          <select class="naf nar" data-k="vlans" data-risk="2,0">
+            <option value="">— Seleccionar —</option>
+            <option value="2">No / no sé</option>
+            <option value="0">Sí, segmentada</option>
+          </select>
+        </div>
+        <div><label>¿Tienen UPS / no-breaks en servidores y red?</label>
+          <select class="naf nar" data-k="ups" data-risk="2,1,0">
+            <option value="">— Seleccionar —</option>
+            <option value="2">No</option>
+            <option value="1">Algunos equipos</option>
+            <option value="0">Sí, todos los críticos</option>
+          </select>
+        </div>
+        <div><label>¿Tienen VPN o acceso remoto?</label><input class="naf" data-k="vpn" placeholder="Sí (Cisco AnyConnect, FortiClient...) / No"></div>
+        <div style="grid-column:1/-1"><label>Observaciones de red (cableado, cuarto de servidores, puntos de acceso mal ubicados, etc.)</label><textarea class="naf" data-k="net_notes" placeholder="Anotar hallazgos visuales durante la visita..."></textarea></div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: SEGURIDAD -->
+    <div class="na-sec">
+      <h4>4. Seguridad actual</h4>
+      <div class="na-grid">
+        <div><label>¿Tienen antivirus / EDR administrado?</label>
+          <select class="naf nar" data-k="av" data-risk="0,1,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, EDR administrado (SentinelOne, CrowdStrike, etc.)</option>
+            <option value="1">Sí, antivirus básico (Windows Defender, Avast)</option>
+            <option value="3">No / no sé</option>
+          </select>
+        </div>
+        <div><label>¿Tienen MFA (doble factor) en email y sistemas?</label>
+          <select class="naf nar" data-k="mfa" data-risk="0,2,4">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, en todos los sistemas</option>
+            <option value="2">Solo en algunos</option>
+            <option value="4">No</option>
+          </select>
+        </div>
+        <div><label>¿Con qué frecuencia aplican parches de seguridad?</label>
+          <select class="naf nar" data-k="patching" data-risk="0,1,2,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Automático / mensual</option>
+            <option value="1">Cada 2-3 meses</option>
+            <option value="2">Solo cuando hay un problema</option>
+            <option value="3">No lo hacemos</option>
+          </select>
+        </div>
+        <div><label>¿Han tenido incidentes de seguridad en los últimos 2 años?</label>
+          <select class="naf nar" data-k="incidents" data-risk="0,2,4">
+            <option value="">— Seleccionar —</option>
+            <option value="0">No</option>
+            <option value="2">Sí, menores (spam, phishing)</option>
+            <option value="4">Sí, graves (ransomware, robo de datos)</option>
+          </select>
+        </div>
+        <div><label>¿Tienen políticas de contraseñas?</label>
+          <select class="naf nar" data-k="passwords" data-risk="0,1,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, formales y aplicadas</option>
+            <option value="1">Informales</option>
+            <option value="3">No</option>
+          </select>
+        </div>
+        <div><label>¿Tienen filtrado de email (anti-spam/phishing)?</label>
+          <select class="naf nar" data-k="email_filter" data-risk="0,2">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí</option>
+            <option value="2">No / no sé</option>
+          </select>
+        </div>
+        <div style="grid-column:1/-1"><label>Observaciones de seguridad (contraseñas pegadas en monitores, acceso físico a servidores, ex-empleados con acceso, etc.)</label><textarea class="naf" data-k="sec_notes" placeholder="Anotar hallazgos durante la visita..."></textarea></div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: CLOUD Y APPS -->
+    <div class="na-sec">
+      <h4>5. Cloud y aplicaciones críticas</h4>
+      <div class="na-grid">
+        <div><label>Plataforma de correo y productividad</label>
+          <select class="naf" data-k="cloud_platform">
+            <option value="">— Seleccionar —</option>
+            <option>Microsoft 365 Business Basic</option>
+            <option>Microsoft 365 Business Standard</option>
+            <option>Microsoft 365 Business Premium</option>
+            <option>Google Workspace</option>
+            <option>Servidor de correo propio (on-prem)</option>
+            <option>Ninguna / correo del dominio básico</option>
+          </select>
+        </div>
+        <div><label>¿Quién administra M365 / Google actualmente?</label><input class="naf" data-k="cloud_admin" placeholder="Nadie / proveedor / empleado interno..."></div>
+        <div><label>ERP / Software de negocio principal</label><input class="naf" data-k="erp" placeholder="QuickBooks, SAP, Oracle, Aspel, Netsuite..."></div>
+        <div><label>¿El ERP/software crítico es en la nube o local?</label>
+          <select class="naf nar" data-k="erp_type" data-risk="0,1">
+            <option value="">— Seleccionar —</option>
+            <option value="0">En la nube (SaaS)</option>
+            <option value="1">Local (servidor propio)</option>
+          </select>
+        </div>
+        <div><label>Otras aplicaciones críticas</label><input class="naf" data-k="other_apps" placeholder="CRM, WMS, MES, CCTV cloud, POS..."></div>
+        <div><label>¿Tienen contratos de soporte con los proveedores de software?</label>
+          <select class="naf" data-k="sw_support">
+            <option value="">— Seleccionar —</option>
+            <option>Sí, con soporte activo</option>
+            <option>Algunos</option>
+            <option>No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: BACKUP Y CONTINUIDAD -->
+    <div class="na-sec">
+      <h4>6. Backup y continuidad de negocio</h4>
+      <div class="na-grid">
+        <div><label>¿Tienen solución de backup activa?</label>
+          <select class="naf nar" data-k="backup_yn" data-risk="0,1,4">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, backup automático en la nube</option>
+            <option value="1">Sí, disco externo / NAS local</option>
+            <option value="4">No</option>
+          </select>
+        </div>
+        <div><label>¿Con qué frecuencia hacen backup?</label>
+          <select class="naf nar" data-k="backup_freq" data-risk="0,1,2,4">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Diario automatizado</option>
+            <option value="1">Semanal</option>
+            <option value="2">Mensual o manual</option>
+            <option value="4">No lo hacemos</option>
+          </select>
+        </div>
+        <div><label>¿Han probado restaurar el backup alguna vez?</label>
+          <select class="naf nar" data-k="backup_test" data-risk="0,2,4">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, regularmente</option>
+            <option value="2">Una vez o alguna vez</option>
+            <option value="4">Nunca</option>
+          </select>
+        </div>
+        <div><label>¿Cuánto tiempo pueden operar sin sistemas? (RTO)</label>
+          <select class="naf" data-k="rto">
+            <option value="">— Seleccionar —</option>
+            <option>Menos de 1 hora</option>
+            <option>1 a 4 horas</option>
+            <option>4 a 24 horas</option>
+            <option>Más de 1 día</option>
+            <option>No lo hemos evaluado</option>
+          </select>
+        </div>
+        <div><label>¿Tienen plan de contingencia documentado?</label>
+          <select class="naf nar" data-k="dr_plan" data-risk="0,2,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí, documentado y probado</option>
+            <option value="2">Existe pero no está documentado</option>
+            <option value="3">No</option>
+          </select>
+        </div>
+        <div><label>¿Qué pasaría si el servidor principal falla mañana?</label><textarea class="naf" data-k="dr_impact" placeholder="Anotar respuesta del prospecto..."></textarea></div>
+      </div>
+    </div>
+
+    <!-- SECTION 7: CUMPLIMIENTO -->
+    <div class="na-sec">
+      <h4>7. Cumplimiento normativo (Compliance)</h4>
+      <div class="na-grid">
+        <div><label>¿Manejan datos de pacientes / salud?</label>
+          <select class="naf nar" data-k="hipaa" data-risk="0,3">
+            <option value="">— Seleccionar —</option>
+            <option value="3">Sí (HIPAA aplica)</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div><label>¿Procesan datos de más de 100K texanos? (TDPSA)</label>
+          <select class="naf nar" data-k="tdpsa" data-risk="0,2">
+            <option value="">— Seleccionar —</option>
+            <option value="2">Sí o no estamos seguros</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div><label>¿Procesan tarjetas de crédito / PCI-DSS?</label>
+          <select class="naf nar" data-k="pci" data-risk="0,2">
+            <option value="">— Seleccionar —</option>
+            <option value="2">Sí</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div><label>¿Son proveedor del gobierno federal / DoD? (CMMC)</label>
+          <select class="naf" data-k="cmmc">
+            <option value="">— Seleccionar —</option>
+            <option>Sí</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div><label>¿Han tenido auditorías de seguridad o compliance?</label>
+          <select class="naf" data-k="audits">
+            <option value="">— Seleccionar —</option>
+            <option>Sí, recientemente</option>
+            <option>Hace más de 2 años</option>
+            <option>Nunca</option>
+          </select>
+        </div>
+        <div><label>¿Su filial en México trata datos personales? (LFPDPPP)</label><select class="naf nar" data-k="lfpdppp" data-risk="0,2"><option value="">— Seleccionar —</option><option value="2">Sí / no estamos seguros</option><option value="0">No aplica</option></select></div>
+        <div><label>¿Tienen políticas de privacidad de datos documentadas?</label>
+          <select class="naf nar" data-k="privacy_policy" data-risk="0,2">
+            <option value="">— Seleccionar —</option>
+            <option value="0">Sí</option>
+            <option value="2">No / no sé</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 8: PROVEEDOR ACTUAL -->
+    <div class="na-sec">
+      <h4>8. Situación actual y proveedor de TI</h4>
+      <div class="na-grid">
+        <div><label>¿Quién les da soporte de TI actualmente?</label>
+          <select class="naf" data-k="current_it">
+            <option value="">— Seleccionar —</option>
+            <option>Personal interno de TI</option>
+            <option>MSP / proveedor externo</option>
+            <option>Técnico independiente (freelance)</option>
+            <option>Nadie / lo manejamos solos</option>
+          </select>
+        </div>
+        <div><label>¿Qué pagan actualmente por soporte de TI?</label><input class="naf" data-k="current_cost" placeholder="$0, ~$500/mes, no sé..."></div>
+        <div><label>¿Qué es lo que MÁS les molesta de su TI actual?</label><textarea class="naf" data-k="pain1" placeholder="Lento, caro, no responde rápido, problemas frecuentes..."></textarea></div>
+        <div><label>¿Han tenido tiempos sin operar por fallas de TI en el último año?</label>
+          <select class="naf nar" data-k="downtime" data-risk="0,1,3">
+            <option value="">— Seleccionar —</option>
+            <option value="0">No</option>
+            <option value="1">Sí, pocas horas</option>
+            <option value="3">Sí, días completos</option>
+          </select>
+        </div>
+        <div><label>¿Tienen presupuesto aprobado para TI?</label>
+          <select class="naf" data-k="budget">
+            <option value="">— Seleccionar —</option>
+            <option>Sí, presupuesto definido</option>
+            <option>No formal, pero hay disponibilidad</option>
+            <option>No, necesitamos justificar la inversión</option>
+          </select>
+        </div>
+        <div><label>¿Cuándo tomarían la decisión de contratar?</label>
+          <select class="naf" data-k="timeline">
+            <option value="">— Seleccionar —</option>
+            <option>Inmediato (este mes)</option>
+            <option>En 1-2 meses</option>
+            <option>Para enero 2027</option>
+            <option>Solo explorando opciones</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 9: SEGURIDAD FÍSICA -->
+    <div class="na-sec">
+      <h4>9. Seguridad física (CCTV y control de acceso)</h4>
+      <div class="na-grid">
+        <div><label>¿Tienen sistema de CCTV activo?</label>
+          <select class="naf" data-k="cctv_yn">
+            <option value="">— Seleccionar —</option>
+            <option>Sí, funcionando</option>
+            <option>Sí, pero desactualizado / incompleto</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div><label>Número de cámaras instaladas</label><input class="naf" data-k="cctv_count" type="number" placeholder="0"></div>
+        <div><label>Edad del sistema de CCTV</label>
+          <select class="naf" data-k="cctv_age">
+            <option value="">— Seleccionar —</option>
+            <option>Menos de 2 años (IP 4K/4MP)</option>
+            <option>2-5 años</option>
+            <option>Más de 5 años (analógico)</option>
+            <option>No tienen</option>
+          </select>
+        </div>
+        <div><label>¿Tienen control de acceso electrónico (tarjetas / biométrico)?</label>
+          <select class="naf" data-k="access_yn">
+            <option value="">— Seleccionar —</option>
+            <option>Sí</option>
+            <option>No, solo llaves físicas</option>
+          </select>
+        </div>
+        <div><label>Número de puertas controladas</label><input class="naf" data-k="doors_count" type="number" placeholder="0"></div>
+        <div><label>¿Necesitan ampliar / modernizar seguridad física?</label>
+          <select class="naf" data-k="physical_need">
+            <option value="">— Seleccionar —</option>
+            <option>Sí, hay interés</option>
+            <option>Posiblemente</option>
+            <option>No por ahora</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 10: OBSERVACIONES -->
+    <div class="na-sec">
+      <h4>10. Observaciones finales y hallazgos del técnico</h4>
+      <label>Hallazgos críticos detectados durante la visita</label>
+      <textarea class="naf" data-k="findings" placeholder="Anotar todo lo que se observó físicamente: cuarto de servidores sin AC, cables a la vista, equipos sin etiquetar, monitores con contraseñas pegadas, switches sin rack, etc." style="min-height:90px"></textarea>
+      <div style="height:8px"></div>
+      <label>Plan recomendado y justificación</label>
+      <textarea class="naf" data-k="recommendation" placeholder="Basándome en lo que vi, recomiendo el Plan [X] porque..." style="min-height:60px"></textarea>
+      <div style="height:8px"></div>
+      <label>Próximo paso acordado</label>
+      <input class="naf" data-k="next_step" placeholder="Enviar propuesta el [fecha], agendar demo, hablar con dueño...">
+    </div>
+
+  </div><!-- /card -->
+</section>
+
+</main>
+
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PL=[
+  {n:'Estándar',sla:'< 4 h',h:'Help Desk 8x5 remoto · Monitoreo y parcheo automático',f:['RMM y parches automáticos 24/7','Antivirus NGAV administrado','M365/Google: altas/bajas y MFA','Backup diario de workstations (cloud)','Reporte ejecutivo mensual']},
+  {n:'Avanzado',sla:'< 1 h',h:'Monitoreo 24/7 + Guardia urgente servidores · 2 visitas/mes',f:['Todo Estándar incluido','EDR/MDR con IA y Threat Hunting','Servidores, firewalls, SD-WAN y WiFi','Backup/DR servidores + prueba trimestral','HIPAA/TDPSA Ready · vCIO trimestral']},
+  {n:'Premium',sla:'< 15 min',h:'24/7/365 total · SOC · Ilimitado',f:['Todo Avanzado incluido','SOC 24/7 (SIEM/XDR) + Dark Web monitoring','Backup inmutable WORM + DRaaS','Security Awareness Training + Phishing sim.','UCaaS/VoIP · vCIO mensual · Uptime 99.99%']}
+];
+const DETAIL=[
+  {plan:'Estándar',price:'$110 – $145 / usuario / mes',target:'PyME 5-25 usuarios · Servicios · Retail · Comercio',tagline:'Operación diaria estable, soporte reactivo/proactivo y protección esencial',sla:{h:'L-V 9am-6pm CST',r:'< 4 horas',res:'< 24 horas',os:'No incluido (cotizar: $95/hora)'},sections:[
+    {i:'🖥️',t:'RMM · Monitoreo y Parcheo Automático 24/7',b:['Agente en todas las workstations y laptops (Windows / macOS)','Alertas automáticas de CPU, disco, memoria y disponibilidad de red','Parches automáticos de SO y apps de terceros (Adobe, Chrome, Zoom, Teams)','Inventario actualizado mensual de hardware y software','Previene el 60% de incidentes críticos antes de que el usuario lo note (NinjaOne 2026)']},
+    {i:'🎧',t:'Help Desk Remoto Ilimitado 8x5',b:['Soporte vía ticket, email y teléfono – sin límite de llamadas ni tickets','Resolución de fallas de software de oficina, correo, impresoras y conectividad','Portal de tickets con historial y seguimiento en tiempo real','Primera respuesta < 4 horas · Resolución media < 24 horas','Soporte en inglés y español (bilingüe nativo)']},
+    {i:'🛡️',t:'Seguridad Endpoint · Antivirus NGAV Administrado',b:['Licencia de protección de siguiente generación (NGAV) centralizada','Escaneo programado de malware, spyware, ransomware y exploits','Filtrado web básico: bloqueo de sitios maliciosos y phishing conocidos','Cuarentena automática de amenazas + alertas al administrador','Dashboard de amenazas incluido en el reporte mensual']},
+    {i:'☁️',t:'Gestión M365 / Google Workspace',b:['Altas, bajas y cambios de usuario (JML – Joiners, Movers, Leavers)','Configuración y enforcement de MFA obligatorio en todos los usuarios','Gestión de licencias, grupos, buzones y permisos básicos','Monitoreo de alertas de seguridad de M365 Defender','📌 2026: Microsoft subió M365 Business Standard en julio 2026. Business Premium incluye Intune + Defender for Business – optimizable con nosotros']},
+    {i:'💾',t:'Backup de Workstations · Cloud Automatizado',b:['Respaldo diario automático de carpetas clave (Documents, Desktop, OneDrive local)','Retención mínima de 30 días en nube segura','Prueba de restauración trimestral con evidencia documentada','Alertas automáticas si el backup falla','Cumple requisito base de TDPSA y HIPAA para protección de datos']},
+    {i:'📊',t:'Reporte Ejecutivo Mensual',b:['Resumen de incidentes, resoluciones y tendencias del mes','Estado de parches aplicados vs. pendientes','Inventario actualizado de activos tecnológicos','Recomendaciones preventivas para el siguiente mes','Documento listo para presentar a dirección o dueño del negocio']}
+  ],out:['Soporte presencial en sitio (cotizar: $95/hora, mín. 2 horas)','Administración de servidores físicos o virtuales','Remediación de ataques complejos de ransomware activo','Cableado estructurado o instalación física de red','Desarrollo de software o modificación de apps del cliente','Dispositivos BYOD no inventariados ni con agente RMM'],
+  pitch:'💬 Para el vendedor: "Con este plan tienen su departamento de TI externo completo. Nosotros monitoreamos, parcheamos y resolvemos – usted se enfoca en su negocio." Precio competitivo en el Valle vs. $145-$195 promedio de mercado Texas (Flamingo.run 2026). El 58% de los contratos MSP 2026 en USA se firman a este nivel con EDR incluido (NinjaOne).'},
+  {plan:'Avanzado',price:'$145 – $200 / usuario / mes',target:'Empresas 15-75 usuarios · Logística · Salud · Manufactura · Multi-sede',tagline:'Alta disponibilidad, seguridad EDR/MDR, servidores gestionados y cumplimiento HIPAA/TDPSA',sla:{h:'8x5 remoto + Guardia 24/7 servidores',r:'< 1 hora críticos / < 2 horas regulares',res:'< 4 horas servidores',os:'2 visitas programadas/mes incluidas'},sections:[
+    {i:'🔒',t:'EDR / MDR · Detección y Respuesta con IA',b:['Análisis de comportamiento en tiempo real con IA para detener ransomware y Zero-Day','Aislamiento automático de equipos comprometidos: evita propagación en la red','Threat Hunting proactivo: búsqueda activa de indicadores de compromiso (IoC)','Rollback de endpoints: recuperación automática a estado limpio post-ataque','📌 El 58% de nuevos contratos MSP en USA 2026 ya exigen EDR como mínimo (NinjaOne)','Para clínicas y logística: fundamental para HIPAA y evitar multas de $100K-$1.9M USD']},
+    {i:'🖧',t:'Administración de Servidores Windows Server / Linux',b:['Monitoreo 24/7 de rendimiento, almacenamiento, disponibilidad y servicios críticos','Parches de sistema operativo con ventana de mantenimiento acordada','Gestión de AD / Microsoft Entra ID, roles, grupos y políticas de acceso','Revisión mensual de logs de eventos, errores y alertas de seguridad','Optimización de rendimiento y capacity planning semestral']},
+    {i:'📡',t:'Gestión de Red · Firewalls, SD-WAN, Switches y WiFi',b:['Administración de firewalls (Fortinet, SonicWall, Cisco Meraki, pfSense)','Optimización de switches administrables y Access Points WiFi','SD-WAN y VPN site-to-site para comunicación entre sucursales','Monitoreo de UPS / No-Breaks: crítico en Texas por red ERCOT (cortes eléctricos)','Alertas de rendimiento, ancho de banda y latencia en tiempo real','Enlace de respaldo recomendado: fibra secundaria, 4G/5G o Starlink']},
+    {i:'🔄',t:'Backup & DR para Servidores (BaaS / DRaaS)',b:['Respaldo diario encriptado localmente + réplica en nube privada externa','Prueba trimestral de restauración con RTO garantizado < 4 horas y evidencia','Documentación de RPO para cada sistema crítico del cliente','Reporte trimestral de DR disponible para auditorías HIPAA / TDPSA','Cubre servidores de archivos, ERP, bases de datos y apps críticas']},
+    {i:'⚡',t:'Texas Grid Resilience · Protección ante Cortes Eléctricos',b:['Monitoreo remoto de UPS e infraestructura crítica de energía','Alertas ante variaciones de voltaje, cortes o batería baja en no-breaks','Documentación de capacidad y tiempo de respaldo de UPS instalados','Recomendaciones de redundancia eléctrica para equipos críticos','Diferenciador clave en el Valle de Texas: los cortes ERCOT son una realidad operativa']},
+    {i:'📋',t:'Cumplimiento HIPAA / TDPSA / SOC 2 Ready',b:['Encriptación de disco (BitLocker/FileVault) en todos los endpoints','MFA avanzado con Conditional Access (Entra ID / Azure AD P1)','Reportes de auditoría de seguridad para clientes regulados','Guía de preparación para HIPAA BAA (Business Associate Agreement)','📌 TDPSA: aplica a empresas que manejan datos de +100K texanos o +25K con datos de pago','No incluye auditoría certificada formal (cotizar como proyecto separado)']},
+    {i:'👔',t:'vCIO Trimestral · Dirección Virtual de Tecnología',b:['Sesión de 60-90 minutos trimestral con tomadores de decisión','Revisión del ciclo de vida de equipos (EOL hardware/software)','Roadmap tecnológico y presupuesto anual de TI recomendado','Evaluación de nuevos proveedores y herramientas de software']}
+  ],out:['Proyectos de migración masiva de datos (propuesta separada)','Cambios mayores de arquitectura de red (rediseño LAN/WAN completo)','Certificaciones formales de cumplimiento acompañadas (SOC 2 Type II, ISO 27001 audit)','Cableado estructurado o instalación eléctrica (cotizar por proyecto)','Adquisición de hardware nuevo (disponible vía modelo HaaS)'],
+  pitch:'💬 Para el vendedor: "Este plan es para empresas que no se pueden permitir una hora sin sistemas. Incluimos el escudo completo contra ransomware, gestionamos sus servidores y somos su cumplimiento HIPAA de hecho." En el Valle: logística binacional y clínicas son el cliente ideal. Precio 25-30% por debajo del promedio Houston/SA gracias al modelo nearshore.'},
+  {plan:'Premium',price:'$220 – $300 / usuario / mes',target:'Corporativos 50+ usuarios · Clínicas HIPAA · Manufactura / Nearshore · Compliance estricto',tagline:'Máxima continuidad, SOC 24/7, cumplimiento internacional y soporte ilimitado sin costo extra',sla:{h:'24/7/365 Total (remoto + en sitio)',r:'< 15 minutos Sev.1 / Sev.2',res:'Contención inmediata · Resolución < 2 horas',os:'Ilimitado, sin cargo adicional'},sections:[
+    {i:'🏢',t:'SOC 24/7/365 · Centro de Operaciones de Seguridad',b:['Monitoreo humano + automatizado ininterrumpido mediante SIEM / XDR','Equipo de Incident Response listo para intervenir las 24 horas, 365 días','Alertas priorizadas por riesgo real (eliminación de ruido de falsos positivos)','Contención activa: aislamiento, bloqueo y erradicación en tiempo real','Dark web monitoring: alertas si credenciales o datos aparecen en mercados ilegales','Email security avanzada: anti-phishing, anti-spam, análisis de adjuntos en sandbox']},
+    {i:'🎓',t:'Security Awareness Training · Capacitación Humana Continua',b:['Módulos mensuales de capacitación en ciberseguridad para empleados (10-15 min)','Simulaciones de phishing periódicas con reporte de tasa de clics y correcciones','Certificados de cumplimiento para auditorías (HIPAA, CMMC)','Human Risk Score mensual: métrica de madurez de seguridad por empleado','📌 Costo promedio de brecha de datos para PyME USA 2025: $3.31M (IBM). La capacitación reduce el riesgo humano hasta un 70%']},
+    {i:'🔍',t:'Vulnerability Assessment Mensual',b:['Escaneo interno y externo mensual con herramientas certificadas','Reporte priorizado por criticidad (CVSS score) con plan de remediación','Seguimiento de remediación con evidencia documentada','Comparativo mes a mes de reducción de superficie de ataque','Incluye escaneo de hasta 3 dominios de aplicaciones web del cliente']},
+    {i:'🔐',t:'Backup Inmutable Anti-Ransomware (WORM)',b:['Tecnología Write Once Read Many: imposible borrar o cifrar los backups','Protege contra ransomware, empleado malintencionado y error humano','Retención mínima 90 días con acceso a versiones históricas','DRaaS: recuperación del entorno completo en nube ante desastre físico','RTO < 1 hora para servicios críticos con DRaaS activo']},
+    {i:'📞',t:'UCaaS · Telefonía IP Empresarial Integrada',b:['Llamadas ilimitadas USA y Canadá incluidas en la cuota mensual','IVR, extensiones, grupos de hunt y grabación de llamadas','Integración con CRM y plataformas de ticketing (HubSpot, Salesforce)','App móvil + softphone PC + teléfono IP físico opcionales','Compatible con RingCentral, Zoom Phone, Microsoft Teams Phone']},
+    {i:'🏛️',t:'Cumplimiento Avanzado · CMMC / ISO 27001 / SOC 2 Type II',b:['Preparación y acompañamiento para certificaciones internacionales','Gestión de evidencias, políticas, procedimientos y controles','Contacto con firmas auditoras certificadas (ISO, SOC 2)','📌 CMMC 2.0: requerido para proveedores del DoD (mercado San Antonio / contratistas)','NOM-035 y cumplimiento bilateral para empresas con operaciones en México y USA']},
+    {i:'💡',t:'vCIO Dedicado · Consultoría Mensual Estratégica',b:['Sesión mensual de consultoría tecnológica con liderazgo del cliente','Evaluación y negociación de proveedores de software y hardware','Revisión de inversiones TI, presupuesto anual y análisis de ROI','Uptime garantizado 99.99% en todos los servicios administrados del contrato']}
+  ],out:['Adquisición directa de hardware/equipamiento comercial (disponible vía modelo HaaS)','Desarrollo de software o aplicaciones del cliente','Soporte a dispositivos BYOD no registrados en inventario','Cableado estructurado o electricidad (cotizar por proyecto)'],
+  pitch:'💬 Para el vendedor: "Este paquete es la tranquilidad total: somos su TI y ciberseguridad completos, disponibles 24/7. Si hay un incidente, lo contenemos en 15 minutos. Si hay una auditoría, tenemos toda la evidencia lista." Ideal para clínicas, plantas de nearshoring y empresas con compliance estricto. Promedio de mercado DFW: $220-$320/usuario. HERMOIT lo entrega con NOC nearshore.'}
+];
+const VT={salud:'Clínicas y salud',pyme:'PyME / servicios',ind:'Industria y manufactura',retail:'Retail / multisucursal'};
+const VERT={salud:[120,190,280],pyme:[110,180,260],ind:[130,200,300],retail:[100,160,240]};
+const TR={valle:['Valle de Texas (McAllen/RGV)',1],sa:['San Antonio',1.05],dfw:['Dallas-Fort Worth',1.08],hou:['Houston',1.1],nl:['Nuevo León (Monterrey) · MXN',1,'MXN'],chi:['Chihuahua / Cd. Juárez · MXN',.97,'MXN'],coa:['Coahuila (Saltillo / Monclova) · MXN',.95,'MXN'],tam:['Tamaulipas (Reynosa / Matamoros) · MXN',.95,'MXN']};
+const AD=[['soc','SOC 24/7 + MDR dedicado','usuario',45],['trn','Capacitación anti-phishing / SAT','usuario',4],['srv','Administración de servidor','servidor',180],['fw','Firewall / SD-WAN gestionado','firewall',75],['uc','Telefonía UCaaS','extensión',22],['bk','Backup cloud inmutable (BaaS)','TB',35],['s1','Red por sitio: oficina pequeña','sitio',135],['s2','Red por sitio: sucursal comercial','sitio',215],['s3','Red por sitio: planta / SD-WAN','sitio',425]];
+const OT=[['cam','Cámara IP 4K instalada','punto',650],['door','Control de acceso (puerta completa)','puerta',2800],['hr','Hora de soporte fuera de póliza','hora',95],['vis','Visita de emergencia en sitio','evento',180]];
+const CHK=[['c1','Armar lista de 40 prospectos objetivo (exportadoras, logística, clínicas) en McAllen–Harlingen–Laredo'],['c2','Preparar y dejar lista la oferta: Network Assessment gratuito (usar la pestaña de la app)'],['c3','Formalizar acuerdo con el socio: qué factura, reparto 50/50 de oficina y condición para M.O. al 50%'],['c4','Revisar con asesor legal el contrato MSA/SLA y el BAA (HIPAA) en inglés y español'],['c5','Primer bloque de visitas y llamadas semanales al listado de prospectos'],['c6','Ejecutar Network Assessments en sitio y generar resumen para cada prospecto'],['c7','Enviar propuesta formal dentro de las 24 horas siguientes a la visita'],['c8','Seguimiento a los 3 días y a los 7 días de enviada la propuesta'],['c9','Diciembre: cerrar al menos cartas de intención para contratos que arranquen el 1 de enero'],['c10','Onboarding de primeros clientes en enero 2027 (RMM, EDR, respaldos, inventario)'],['c11','Definir con HERMOIT MEXICO y MA3IX qué entidad cotiza y factura a los clientes con filiales (la operación remota la hace HERMOIT MEXICO)']];
+let S={leads:[],fx:18.35,tf:{},tm:35,mf:250,com:10,vc:[30,45,70],checks:{},naData:{},items:[
+  {c:'Personal',n:'Ingeniero principal (L3/vCIO)',usd:2000,sh:100},
+  {c:'Personal',n:'Ingeniero de soporte (L1/L2)',usd:1200,sh:100},
+  {c:'Herramientas',n:'Stack MSP (RMM, EDR/XDR, PSA, backup)',usd:600,sh:100},
+  {c:'Administrativo',n:'Oficina/coworking, internet, teléfono y viáticos',usd:800,sh:50},
+  {c:'Administrativo',n:'Cargas sociales e impuestos',usd:400,sh:100},
+  {c:'Comercial',n:'Viáticos y material de campaña Valle (sugerido)',usd:300,sh:50}
+]};
+const TOKEN_KEY='HITASSESNET_TOKEN';
+let tm,ME=null,sent={};
+const stat=t=>{const e=$('#st');if(e)e.textContent=t};
+const api=async(path,opt={})=>{const tk=localStorage.getItem(TOKEN_KEY);const r=await fetch('/api'+path,{method:opt.method||'GET',headers:Object.assign({'Content-Type':'application/json'},tk?{Authorization:'Bearer '+tk}:{}),body:opt.body?JSON.stringify(opt.body):undefined});
+ if(r.status===401&&path!=='/auth/login'){logout(true);throw new Error('Sesión vencida')}
+ if(!r.ok){let m=String(r.status);try{m=JSON.stringify((await r.json()).detail)}catch(e){}throw new Error(m)}return r.json()};
+const uid=()=>(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:r&3|8).toString(16)});
+const leadOut=l=>({id:l.id||(l.id=uid()),company:l.c,contact:l.ct||'',phone:l.ph||'',city:l.ci||'',vertical:l.v,territory:l.t,plan:+l.p,users:+l.u||1,filial:l.fi||'',stage:+l.st,next_step:l.ns||'',next_date:l.nd||'',notes:l.nt||''});
+const leadIn=x=>({id:x.id,c:x.company,ct:x.contact,ph:x.phone,ci:x.city,v:x.vertical,t:x.territory,p:x.plan,u:x.users,fi:x.filial,st:x.stage,ns:x.next_step,nd:x.next_date,nt:x.notes,src:x.source});
+async function pushAll(){
+ const jobs=[['/leads',{leads:S.leads.map(leadOut)}],['/assessment',{data:S.naData,prop:S.prop||null}],['/checks',{checks:S.checks}]];
+ if(ME&&ME.role==='admin')jobs.push(['/costs',{items:S.items.map(x=>({category:x.c,name:x.n,usd:+x.usd||0,share_pct:sh(x)}))}],['/params',{fx:S.fx,tm:S.tm,mf:S.mf,com:S.com,vc:S.vc,tf:S.tf||{}}]);
+ for(const[p,b]of jobs){const k=JSON.stringify(b);if(sent[p]===k)continue;await api(p,{method:'PUT',body:b});sent[p]=k}}
+function save(){if(!ME)return;clearTimeout(tm);stat('Guardando…');tm=setTimeout(async()=>{try{await pushAll();stat('Guardado en BD ✓ '+new Date().toLocaleTimeString())}catch(e){stat('⚠ No se pudo guardar: '+e.message)}},600)}
+async function boot(){
+ const b=await api('/bootstrap');ME=b.user;sent={};
+ document.body.className=document.body.className.replace(/\s*role-\w+/g,'')+' role-'+ME.role;
+ if(b.fx)S.fx=b.fx;if(b.tf)S.tf=b.tf;
+ if(b.params){S.tm=b.params.tm;S.mf=b.params.mf;S.com=b.params.com;S.vc=b.params.vc}
+ if(b.costs&&b.costs.length)S.items=b.costs.map(c=>({c:c.category,n:c.name,usd:c.usd,sh:c.share_pct}));
+ S.leads=b.leads.map(leadIn);S.naData=b.assessment.data||{};S.prop=b.assessment.prop||null;S.checks=b.checks||{};
+ $('#login').style.display='none';$('#who').textContent=ME.name+' · '+ME.role;all();stat('Conectado a la BD ✓')}
+function logout(expired){localStorage.removeItem(TOKEN_KEY);ME=null;sent={};$('#login').style.display='flex';$('#lerr').textContent=expired?'Tu sesión venció, entra de nuevo':''}
+async function doLogin(){$('#lerr').textContent='';try{const r=await api('/auth/login',{method:'POST',body:{email:$('#lemail').value.trim(),password:$('#lpass').value}});localStorage.setItem(TOKEN_KEY,r.token);$('#lpass').value='';await boot()}catch(err){$('#lerr').textContent=/Demasiados/.test(err.message)?'Demasiados intentos, espera unos minutos':'Correo o contraseña incorrectos'}}
+const sh=x=>x.sh==null?100:+x.sh,gross=()=>S.items.reduce((a,x)=>a+(+x.usd||0),0),fixed=()=>S.items.reduce((a,x)=>a+(+x.usd||0)*sh(x)/100,0);
+const fm=(n,mx)=>'$'+Math.round(n).toLocaleString(mx?'es-MX':'en-US')+(mx?' MXN':' USD');
+const opts=(o,sel)=>Object.entries(o).map(([k,v])=>`<option value="${k}"${k===sel?' selected':''}>${esc(Array.isArray(v)?v[0]:v)}</option>`).join('');
+const MX=[2200,3400,5200];
+const MXP={soc:825,trn:75,srv:3200,fw:1380,uc:400,bk:650,s1:2480,s2:3945,s3:7800,cam:3800,door:18500,hr:750,vis:1450};
+const isMx=t=>TR[t][2]==='MXN',fac=t=>(S.tf&&S.tf[t]!=null)?+S.tf[t]:TR[t][1],ap=(a,mx)=>mx?MXP[a[0]]:a[3];
+function price(t,v,p){if(isMx(t)){return Math.round(MX[p]*VERT[v][p]/VERT.pyme[p]*fac(t)/50)*50}return Math.round(VERT[v][p]*fac(t))}
+
+// ---- CATÁLOGO RÁPIDO ----
+function rCat(){const t=$('#ct').value,v=$('#cv').value;
+$('#plans').innerHTML=PL.map((p,i)=>`<div class="card"><span class="tag">SLA ${p.sla}</span><h3 style="margin-top:8px">${p.n}</h3><div class="big">${fm(price(t,v,i),isMx(t))}</div><div class="mu">por usuario / mes${isMx(t)?' + IVA':''}</div><p><b>${p.h}</b></p><ul>${p.f.map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>`).join('');
+$('#vm').innerHTML='<tr><th>Vertical</th>'+PL.map(p=>`<th>${p.n}</th>`).join('')+'</tr>'+Object.keys(VT).map(k=>`<tr><td>${VT[k]}</td>${PL.map((p,i)=>`<td>${fm(price(t,k,i),isMx(t))}</td>`).join('')}</tr>`).join('');
+$('#ad').innerHTML='<tr><th>Servicio</th><th>Unidad</th><th>Precio (mensual o proyecto)</th></tr>'+AD.concat(OT).map(a=>`<tr><td>${a[1]}</td><td>por ${a[2]}${AD.includes(a)?' / mes':''}</td><td>${fm(ap(a,isMx(t)),isMx(t))}</td></tr>`).join('')}
+
+// ---- CATÁLOGO DETALLADO ----
+let curDP=0;
+function rDet(i){
+  curDP=i;
+  document.querySelectorAll('[data-dp]').forEach((b,j)=>{b.className=j===i?'b':'b s'});
+  const d=DETAIL[i];
+  $('#detpane').innerHTML=`
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+    <span class="tag">${d.plan}</span>
+    <span style="font-size:1.1rem;font-weight:700;color:var(--pr)">${d.price}</span>
+  </div>
+  <p class="mu" style="margin-bottom:4px"><b>Mercado objetivo:</b> ${d.target}</p>
+  <p style="margin-bottom:12px">${d.tagline}</p>
+  <div class="sla-grid">
+    <div class="sla-box"><div class="val">${d.sla.h}</div><div class="lbl">Horario de soporte</div></div>
+    <div class="sla-box"><div class="val">${d.sla.r}</div><div class="lbl">Primera respuesta</div></div>
+    <div class="sla-box"><div class="val">${d.sla.res}</div><div class="lbl">Resolución</div></div>
+    <div class="sla-box"><div class="val" style="font-size:.9rem">${d.sla.os}</div><div class="lbl">Soporte en sitio</div></div>
+  </div>
+  <h3 style="margin:16px 0 8px">Componentes incluidos</h3>
+  ${d.sections.map(s=>`<div class="scomp"><h4>${s.i} ${esc(s.t)}</h4><ul>${s.b.map(b=>`<li${b.startsWith('📌')?` style="color:var(--wa);font-weight:600"`:''} >${esc(b)}</li>`).join('')}</ul></div>`).join('')}
+  <h3 style="margin:16px 0 8px">⛔ Fuera del alcance (No incluido)</h3>
+  <div class="card" style="background:#fff5f5;border-color:#fca5a5"><ul style="color:var(--er)">${d.out.map(o=>`<li>${esc(o)}</li>`).join('')}</ul></div>
+  <div class="pitch">${esc(d.pitch)}</div>`;
+}
+
+// ---- COTIZADOR ----
+function rQ(){
+$('#fbox').style.display=$('#fil').checked?'block':'none';
+const v=$('#vert').value,p=+$('#plan').value,d=Math.min(40,Math.max(0,+$('#disc').value||0)),t1=$('#terr').value,u1=+$('#users').value||0,sec=$('#fil').checked,t2=$('#terr2').value,u2=sec?(+$('#users2').value||0):0;
+const mx1=isMx(t1),cu=m=>m?'MXN':'USD',site=(t,u)=>{const mx=isMx(t),net=price(t,v,p)*(1-d/100);return{t,u,mx,net,pl:net*u}},sites=sec?[site(t1,u1),site(t2,u2)]:[site(t1,u1)];
+const T={USD:{rec:0,one:0},MXN:{rec:0,one:0}},L=[],ob=$('#onb').checked;
+sites.forEach(s=>{L.push(`${PL[p].n} · ${s.u} usuarios × ${fm(s.net,s.mx)}`+(d?` (−${d}%)`:'')+` · ${TR[s.t][0]}|${fm(s.pl,s.mx)}`);T[cu(s.mx)].rec+=s.pl;if(ob){T[cu(s.mx)].one+=s.pl;L.push(`Onboarding e implementación (único) · ${TR[s.t][0]}|${fm(s.pl,s.mx)}`)}});
+document.querySelectorAll('[data-q]').forEach(e=>{const q=+e.value||0;if(!q)return;const a=AD.concat(OT).find(x=>x[0]===e.dataset.q),pr=ap(a,mx1)*q,r=AD.includes(a);T[cu(mx1)][r?'rec':'one']+=pr;L.push(`${a[1]} × ${q}${r?' / mes':' (único)'}|${fm(pr,mx1)}`)});
+const anyMx=sites.some(s=>s.mx),both=T.USD.rec>0&&T.MXN.rec>0,
+tx=k=>[T.USD[k]?fm(T.USD[k]):'',T.MXN[k]?fm(T.MXN[k],true)+' + IVA':''].filter(Boolean).join(' + ')||fm(0),
+recU=T.USD.rec+T.MXN.rec/S.fx,plU=sites.reduce((a,s)=>a+s.pl/(s.mx?S.fx:1),0),vc=S.vc[p]*sites.reduce((a,s)=>a+s.u,0),pc=plU?(plU-vc)/plU*100:0,okm=pc>=S.tm,com=recU*12*S.com/100,
+names=sites.map(s=>esc(TR[s.t][0])).join(' + ');
+$('#out').innerHTML=`<h2>Propuesta${$('#qn').value?' para '+esc($('#qn').value):''}</h2><p class="mu">${names} · ${esc(VT[v])} · ${new Date().toLocaleDateString('es-US')} · Vigencia 15 días · Precios antes de impuestos</p><table>${L.map(l=>{const s=l.split('|');return`<tr><td>${esc(s[0])}</td><td style="text-align:right;font-weight:600">${s[1]}</td></tr>`}).join('')}</table><p class="big">${tx('rec')} / mes</p>${both?`<p class="mu">Equivalente consolidado ≈ ${fm(recU)} / mes (TC ${S.fx})</p>`:''}<p class="mu">Pago inicial único: ${tx('one')}</p><p><b>Incluye:</b> ${PL[p].f.map(esc).join(' · ')}. SLA ${PL[p].sla}.</p>${anyMx?'<p class="mu">Importes en MXN más IVA (16%).</p>':''}`;
+$('#int').innerHTML=`<h2>Panel interno · No se imprime</h2><p>Margen de contribución: <span class="${okm?'ok':'er'}">${pc.toFixed(0)}%</span> (objetivo ${S.tm}%)${okm?'':' · Revisa el descuento o el plan'}</p><p>Cuota mínima: ${recU>=S.mf?'<span class="ok">✓ cumple</span>':'<span class="er">⚠ por debajo de '+fm(S.mf)+'</span>'}</p><p>Facturación estimada del socio (año 1, ${S.com}%): <b>${fm(com)}</b></p>${both?'<p class="wa">Propuesta binacional: la operación remota la hace HERMOIT MEXICO (contratada por HERMOIT LLC / MA3IX). Confirmar qué entidad cotiza y factura al cliente.</p>':''}`;
+window._txt=`Propuesta HERMOIT${$('#qn').value?' - '+$('#qn').value:''}\n`+L.map(l=>l.replace('|',': ')).join('\n')+`\n\nRecurrente: ${tx('rec')}/mes\nPago inicial: ${tx('one')}\nSLA: ${PL[p].sla}\nVigencia: 15 días`}
+function rTF(){$('#tfs').innerHTML=Object.keys(TR).map(k=>`<div style="display:flex;gap:8px;align-items:center;margin-bottom:4px"><span style="flex:1;font-size:.82rem">${esc(TR[k][0])}</span><input type="number" step=".01" data-tf="${k}" value="${fac(k)}" style="width:90px"></div>`).join('')}
+
+// ---- COSTOS ----
+function rCost(){const C=['Personal','Herramientas','Administrativo','Comercial'];$('#cost').innerHTML=C.map(c=>`<tr><th>${c}</th><th>Total USD/mes</th><th>% HERMOIT</th><th></th></tr>`+S.items.map((x,i)=>x.c===c?`<tr><td><input data-i=${i} data-k=n value="${esc(x.n)}"></td><td style="width:130px"><input type=number data-i=${i} data-k=usd value="${+x.usd||0}"></td><td style="width:90px"><input type=number min=0 max=100 data-i=${i} data-k=sh value="${sh(x)}"></td><td style="width:50px"><button class="b s" data-del=${i}>✕</button></td></tr>`:'').join('')+`<tr><td colspan=4><button class="b s" data-add="${c}">+ Agregar</button></td></tr>`).join('');tot()}
+function tot(){$('#ctot').textContent='Total operación: '+fm(gross())+' · A cargo de HERMOIT: '+fm(fixed())+' · A cargo del socio: '+fm(gross()-fixed())}
+
+// ---- RENTABILIDAD ----
+function rRent(){const n=[0,1,2].map(i=>+$('#r'+i).value||0),u=+$('#ru').value||0,pr=n.map((c,i)=>c*u*price('valle','pyme',i)),rev=pr.reduce((a,b)=>a+b,0),vc=n.reduce((a,c,i)=>a+c*u*S.vc[i],0),F=fixed(),cm=rev*S.com/100,ut=rev-vc-F-cm,cl=n.reduce((a,b)=>a+b,0),cpc=cl?(rev-vc-cm)/cl:0;
+const K=(t,v,s)=>`<div class="card"><div class="mu">${t}</div><div class="big">${v}</div><div class="mu">${s||''}</div></div>`;
+$('#rr').innerHTML=K('Ingreso mensual',fm(rev),cl+' clientes')+K('Costos fijos HERMOIT',fm(F),'tras reparto con el socio')+K('Costo variable + socio',fm(vc+cm),'socio '+S.com+'% (por definir)')+K('Utilidad mensual',`<span class="${ut>=0?'ok':'er'}">${fm(ut)}</span>`,rev?(ut/rev*100).toFixed(0)+'% de margen':'')+K('Punto de equilibrio',cpc>0?Math.ceil(F/cpc)+' clientes':'—','con esta mezcla')+K('Utilidad anual',fm(ut*12))}
+
+// ---- CHECKLIST CAMPAÑA ----
+function rChk(){const n=CHK.filter(c=>S.checks[c[0]]).length,p=Math.round(n/CHK.length*100);$('#chk').innerHTML=`<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between"><b>Avance de la campaña</b><b style="color:var(--pr)">${n} de ${CHK.length} · ${p}%</b></div><div class="risk-bar"><div class="risk-fill" style="width:${p}%;background:var(--ok)"></div></div></div>`+CHK.map(c=>`<label class="ck"><input type="checkbox" data-c="${c[0]}"${S.checks[c[0]]?' checked':''}><span style="font-weight:400;color:var(--tx);font-size:.9rem">${esc(c[1])}</span></label>`).join('')}
+
+// ---- FILL PARAMS ----
+function fill(){$('#fx').value=S.fx;rTF();$('#tm').value=S.tm;$('#mf').value=S.mf;$('#com').value=S.com;document.querySelectorAll('.vc').forEach(e=>e.value=S.vc[e.dataset.i])}
+
+// ---- NETWORK ASSESSMENT ----
+function naFill(){document.querySelectorAll('.naf').forEach(e=>{const k=e.dataset.k,v=S.naData[k];if(v!==undefined){if(e.type==='checkbox')e.checked=!!v;else e.value=v||''}else if(e.tagName==='SELECT')e.value=({terr:'valle',vert:'pyme'})[k]||e.options[0].value;else if(k==='na_date'){e.value=new Date().toISOString().split('T')[0];S.naData.na_date=e.value}else e.value=''})}
+function naScore(){
+  let score=0,max=0;
+  document.querySelectorAll('.nar').forEach(e=>{
+    const v=+e.value||0,risks=e.dataset.risk?e.dataset.risk.split(',').map(Number):[];
+    if(risks.length){max+=Math.max(...risks);score+=v}
+  });
+  const pct=max?Math.round(score/max*100):0;
+  const color=pct<30?'#16a34a':pct<55?'#d97706':'#dc2626';
+  const lbl=pct<30?'🟢 Riesgo Bajo — buenas prácticas, ideal para Estándar o Avanzado.':pct<55?'🟡 Riesgo Medio — brechas importantes. Recomendar Avanzado con urgencia.':'🔴 Riesgo Alto — vulnerabilidades críticas detectadas. Premium o Avanzado urgente.';
+  $('#naScore').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><b>Índice de Riesgo TI</b><span style="font-weight:800;color:${color}">${pct}% · ${pct<30?'Bajo':pct<55?'Medio':'Alto'}</span></div><div class="risk-bar"><div class="risk-fill" style="width:${pct}%;background:${color}"></div></div><p class="mu">${lbl}</p>`;
+}
+function naExportText(){
+  const d=S.naData;
+  const r=k=>d[k]||'—';
+  return `HERMOIT · REPORTE DE NETWORK ASSESSMENT GRATUITO
+${'='.repeat(50)}
+Empresa: ${r('company')} | Contacto: ${r('contact')}
+Tel: ${r('phone')} | Email: ${r('email')}
+Dirección: ${r('address')} | Giro: ${r('industry')}
+Empleados: ${r('employees')} | Sitios: ${r('locations')}
+Filiales / otro país: ${r('cross')} (${r('cross_where')})
+Evaluado por: ${r('assessed_by')} | Fecha: ${r('na_date')}
+
+INVENTARIO
+- Workstations: ${r('workstations')} | Laptops: ${r('laptops')} | Servidores: ${r('servers')} VMs: ${r('vms')}
+- Edad promedio equipos: ${r('hw_age')} | Garantía: ${r('hw_warranty')}
+- Equipos especiales: ${r('hw_special')}
+
+RED E INFRAESTRUCTURA
+- ISP: ${r('isp')} (${r('bandwidth')}) | Failover: ${r('failover')}
+- Firewall: ${r('firewall')} | Switches: ${r('switches')} | APs WiFi: ${r('aps')}
+- VLANs: ${r('vlans')} | UPS: ${r('ups')} | VPN: ${r('vpn')}
+- Notas de red: ${r('net_notes')}
+
+SEGURIDAD ACTUAL
+- Antivirus/EDR: ${r('av')}
+- MFA habilitado: ${r('mfa')}
+- Frecuencia de parches: ${r('patching')}
+- Incidentes recientes: ${r('incidents')}
+- Políticas de contraseñas: ${r('passwords')}
+- Filtrado de email: ${r('email_filter')}
+- Notas: ${r('sec_notes')}
+
+CLOUD Y APLICACIONES
+- Plataforma email: ${r('cloud_platform')} | Admin: ${r('cloud_admin')}
+- ERP/Software crítico: ${r('erp')} (${r('erp_type')})
+- Otras apps: ${r('other_apps')}
+
+BACKUP Y CONTINUIDAD
+- Backup activo: ${r('backup_yn')} | Frecuencia: ${r('backup_freq')}
+- Prueba de restauración: ${r('backup_test')} | RTO esperado: ${r('rto')}
+- Plan de contingencia: ${r('dr_plan')}
+- Impacto de falla del servidor: ${r('dr_impact')}
+
+CUMPLIMIENTO NORMATIVO
+- HIPAA: ${r('hipaa')} | TDPSA: ${r('tdpsa')} | PCI-DSS: ${r('pci')} | CMMC: ${r('cmmc')}
+- Auditorías previas: ${r('audits')} | Política de privacidad: ${r('privacy_policy')} | LFPDPPP (México): ${r('lfpdppp')}
+
+PROVEEDOR ACTUAL
+- TI actual: ${r('current_it')} | Costo mensual: ${r('current_cost')}
+- Dolor principal: ${r('pain1')}
+- Tiempo sin sistemas en el último año: ${r('downtime')}
+- Presupuesto: ${r('budget')} | Timeline de decisión: ${r('timeline')}
+
+SEGURIDAD FÍSICA
+- CCTV: ${r('cctv_yn')} (${r('cctv_count')} cámaras, ${r('cctv_age')})
+- Control de acceso: ${r('access_yn')} (${r('doors_count')} puertas)
+- Necesidad de expansión: ${r('physical_need')}
+
+HALLAZGOS Y RECOMENDACIÓN
+${r('findings')}
+
+Plan recomendado: ${r('recommendation')}
+Próximo paso: ${r('next_step')}
+${'='.repeat(50)}
+HERMOIT LLC · Fort Worth, TX · Servicios Administrados de TI
+`;
+}
+
+const ST=['Prospecto','Visita agendada','Assessment realizado','Propuesta enviada','Negociación','Cerrado ganado','Perdido'];
+const lvn=l=>price(l.t,l.v,+l.p)*(+l.u||0),lv=l=>isMx(l.t)?lvn(l)/S.fx:lvn(l);
+function rPip(){
+ const L=S.leads||[],open=L.filter(l=>l.st<5),won=L.filter(l=>l.st===5),lost=L.filter(l=>l.st===6),sum=a=>a.reduce((x,l)=>x+lv(l),0),today=new Date().toISOString().slice(0,10),over=open.filter(l=>l.nd&&l.nd<today).length,wr=won.length+lost.length?Math.round(won.length/(won.length+lost.length)*100)+'%':'—';
+ const K=(t,v,s)=>`<div class="card"><div class="mu">${t}</div><div class="big">${v}</div><div class="mu">${s||''}</div></div>`;
+ $('#pk').innerHTML=K('Prospectos abiertos',open.length,L.length+' en total')+K('MRR potencial abierto',fm(sum(open)),'USD/mes (MXN convertido), sin descuentos')+K('MRR cerrado',`<span class="ok">${fm(sum(won))}</span>`,won.length+' clientes ganados')+K('Tasa de cierre',wr,lost.length+' perdidos')+K('Pasos vencidos',`<span class="${over?'er':'ok'}">${over}</span>`,'próximo paso con fecha pasada')+`<div class="card" style="grid-column:1/-1"><div class="mu" style="margin-bottom:6px">Embudo por etapa</div>${ST.map((s,i)=>`<span class="tag" style="margin:2px">${s}: ${L.filter(l=>l.st===i).length}</span>`).join('')}</div>`;
+ const f=$('#pf').value||'all',rows=L.map((l,i)=>[l,i]).filter(([l])=>f==='all'||l.st===+f);
+ $('#pl').innerHTML='<tr><th>Empresa / contacto</th><th>Etapa</th><th>Plan · usuarios</th><th>MRR est.</th><th>Próximo paso</th><th>Fecha</th><th>Notas</th><th></th></tr>'+(rows.length?rows.map(([l,i])=>`<tr><td><b>${esc(l.c)}</b>${l.fi?' <span class="tag">'+esc(l.fi)+'</span>':''}<div class="mu">${esc(l.ct||'')}${l.ph?' · '+esc(l.ph):''}${l.ci?' · '+esc(l.ci):''}</div></td><td><select data-l=${i} data-lf="st">${ST.map((s,j)=>`<option value="${j}"${j===l.st?' selected':''}>${s}</option>`).join('')}</select></td><td>${PL[+l.p].n} · ${esc(l.u)} · ${esc(VT[l.v])}</td><td>${fm(lvn(l),isMx(l.t))}</td><td><input data-l=${i} data-lf="ns" value="${esc(l.ns||'')}"></td><td><input type="date" data-l=${i} data-lf="nd" value="${esc(l.nd||'')}"${l.nd&&l.nd<today&&l.st<5?' style="border-color:var(--er)"':''}></td><td><input data-l=${i} data-lf="nt" value="${esc(l.nt||'')}"></td><td><button class="b s" data-pdel=${i}>✕</button></td></tr>`).join(''):'<tr><td colspan=8 class="mu">Sin prospectos todavía. Agrega el primero arriba.</td></tr>');
+}
+const propS=()=>S.prop=(S.prop&&S.prop.off)?S.prop:{off:{},qty:{},disc:0,onb:true};
+function naPct(){let sc=0,mx=0;document.querySelectorAll('.nar').forEach(e=>{const r=e.dataset.risk?e.dataset.risk.split(',').map(Number):[];if(r.length){mx+=Math.max(...r);sc+=+e.value||0}});return mx?Math.round(sc/mx*100):0}
+function naUsers(){const d=S.naData;return Math.max(1,+d.employees||((+d.workstations||0)+(+d.laptops||0))||1)}
+function recom(){
+ const d=S.naData,n=k=>+d[k]||0,pct=naPct(),R=[`Índice de riesgo TI del assessment: ${pct}%`];let sc=0;
+ const sv=n('servers'),vm=n('vms'),lo=n('locations');
+ if(sv+vm>0){sc++;R.push(`Opera ${sv} servidor(es) físico(s) y ${vm} virtual(es) que requieren monitoreo y respaldo`)}
+ if(lo>1){sc++;R.push(`Trabaja en ${lo} sitios: necesita red y VPN administradas`)}
+ if(d.hipaa==='3'){sc+=2;R.push('Maneja datos de salud (aplica HIPAA)')}
+ if(d.tdpsa==='2'||d.pci==='2'||d.lfpdppp==='2'){sc++;R.push('Tiene obligaciones de privacidad o de pagos (TDPSA, PCI o LFPDPPP)')}
+ if(d.incidents==='4'){sc+=2;R.push('Sufrió un incidente grave de seguridad: conviene detección 24/7')}else if(d.incidents==='2'){sc++;R.push('Ha tenido incidentes menores de seguridad')}
+ if(d.downtime==='3'){sc++;R.push('Ha tenido días sin operar por fallas de TI')}
+ if(d.mfa==='4')R.push('No usa doble factor (MFA): se activa desde el primer día');
+ if(d.backup_yn==='4'||d.backup_test==='4')R.push('El respaldo no existe o nunca se ha probado');
+ if(d.cmmc==='Sí'){sc+=3;R.push('Proveedor del gobierno federal (CMMC)')}
+ if(n('employees')>=50){sc++;R.push('50 o más empleados')}
+ sc+=pct>=55?2:pct>=30?1:0;
+ return{plan:sc>=6?2:sc>=2?1:0,R,pct,sc}}
+function addons(p,users){
+ const d=S.naData,n=k=>+d[k]||0,A=[],add=(id,q,why)=>A.push({id,q:Math.max(1,Math.round(q)),why}),lo=Math.max(1,n('locations'));
+ if(p===0){if(n('servers')||n('vms'))add('srv',n('servers')||1,'Servidores del cliente');if(!d.firewall||/isp|router/i.test(d.firewall))add('fw',lo,'Firewall administrado por sitio')}
+ if(p<2){if(d.backup_yn==='4'||d.backup_test==='4'||d.backup_freq==='4')add('bk',1,'Respaldo inmutable (TB estimados)');
+  if(p===1&&(d.incidents==='2'||d.incidents==='4'||naPct()>=55))add('soc',users,'Detección y respuesta 24/7');
+  if(d.incidents==='2'||d.incidents==='4'||d.email_filter==='2'||d.mfa==='4')add('trn',users,'Capacitación anti-phishing');
+  if(n('phones')>0)add('uc',n('phones'),'Teléfonos IP actuales a telefonía en la nube')}
+ if(d.physical_need==='Sí, hay interés'){add('cam',4,'Cámaras de seguridad solicitadas');if(d.access_yn==='No, solo llaves físicas'||n('doors_count'))add('door',n('doors_count')||1,'Control de acceso')}
+ return A}
+function rProp(){
+ const d=S.naData,P=propS(),tk=d.terr||'valle',vk=d.vert||'pyme',mx=isMx(tk),us=naUsers(),rc=recom(),dsc=P.disc||0,AL=AD.concat(OT),O=[];
+ const cards=[0,1,2].map(p=>{
+  const unit=price(tk,vk,p)*(1-dsc/100),pl=unit*us;let rec=pl,one=P.onb?pl:0;const ls=[];
+  const lines=addons(p,us).map(x=>{const a=AL.find(z=>z[0]===x.id),key=p+':'+x.id,q=P.qty[key]||x.q,on=!P.off[key],pr=ap(a,mx)*q,r=AD.includes(a);if(on){if(r)rec+=pr;else one+=pr;ls.push(a[1]+' x'+q)}
+   return `<div class="pline${on?'':' off'}"><input class="np" type="checkbox" data-pk="${key}"${on?' checked':''}><div style="flex:1"><b>${esc(a[1])}</b> × <input class="np" type="number" min="1" data-pq="${key}" value="${q}" style="width:64px"><span class="mu"> ${r?'/ mes':'(único)'}</span><div class="mu">${esc(x.why)}</div></div><b>${fm(pr,mx)}</b></div>`}).join('')||'<p class="mu">Sin adicionales sugeridos para esta opción.</p>';
+  O.push({n:PL[p].n,rec,one,ls,rc:p===rc.plan});
+  return `<div class="card${p===rc.plan?' recom':''}" style="margin:0"><span class="tag${p===rc.plan?' tag-ok':''}">${p===rc.plan?'⭐ Recomendada':'Opción '+(p+1)}</span><h3 style="margin-top:8px">${PL[p].n}</h3><div class="big">${fm(unit,mx)}</div><div class="mu">por usuario / mes × ${us} usuarios = ${fm(pl,mx)}</div><p><b>${esc(PL[p].h)}</b></p><ul>${PL[p].f.map(f=>`<li>${esc(f)}</li>`).join('')}</ul><h4 style="margin:10px 0 4px">Adicionales sugeridos</h4>${lines}<div style="margin-top:12px;border-top:2px solid var(--bd);padding-top:8px"><div class="big">${fm(rec,mx)} / mes</div><div class="mu">Pago inicial único: ${fm(one,mx)}${mx?' · + IVA':''}</div></div></div>`}).join('');
+ window._ptxt=`Propuesta HERMOIT - ${d.company||''}\n${us} usuarios · ${TR[tk][0]}\nRecomendada: ${PL[rc.plan].n}\n\n`+O.map(o=>`${o.rc?'* ':''}${o.n}: ${fm(o.rec,mx)}/mes + inicial ${fm(o.one,mx)}${o.ls.length?'\n   Adicionales: '+o.ls.join(', '):''}`).join('\n');
+ $('#propbody').innerHTML=`<div class="card"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px"><div><h2 style="margin:0">Propuesta de Servicios Administrados de TI</h2><p class="mu" style="margin:4px 0 0">${esc(d.company||'Prospecto sin nombre')} · ${esc(TR[tk][0])} · ${esc(VT[vk])} · ${new Date().toLocaleDateString('es-US')}</p></div><div class="np" style="display:flex;gap:8px;flex-wrap:wrap"><button class="b" onclick="window.print()">🖨️ Imprimir / PDF</button><button class="b s" data-pcopy="1">📋 Copiar resumen</button><button class="b ok" data-ppip="1">➕ Registrar en Pipeline</button></div></div>${(+d.employees||+d.workstations||+d.laptops)?'':'<p class="wa np">Captura empleados o equipos en el Network Assessment para calcular los usuarios (por ahora se usa 1).</p>'}<h3 style="margin:14px 0 6px">Lo que encontramos en su Network Assessment</h3><ul>${rc.R.map(r=>`<li>${esc(r)}</li>`).join('')}</ul><p class="mu">Recomendamos <b>${PL[rc.plan].n}</b>. Puede quitar cualquier adicional desmarcando su casilla; los totales se recalculan.</p><div class="np" style="display:flex;gap:16px;flex-wrap:wrap;align-items:end"><label style="margin:0"><input type="checkbox" id="ponb"${P.onb?' checked':''} style="width:auto"> Incluir onboarding (1 mes de cuota)</label><div style="width:150px"><label>Descuento %</label><input id="pdisc" type="number" min="0" max="40" value="${dsc}"></div></div></div><div class="g">${cards}</div><p class="mu">Precios antes de impuestos${mx?' · MXN más IVA (16%)':''}. Vigencia 15 días. Las recomendaciones se basan solo en la información capturada en el assessment; el alcance final se confirma en contrato.</p>`}
+function all(){(S.leads||[]).forEach(l=>{if(!TR[l.t])l.t='nl'});rCat();rQ();rCost();rRent();rChk();fill();rDet(0);naFill();naScore();rPip()}
+
+document.addEventListener('change',e=>{const t=e.target,d=t.dataset;
+  if(t.id==='pf'){rPip();return}
+  if(d.pk!==undefined||d.pq!==undefined||t.id==='ponb'||t.id==='pdisc'){const P=propS();if(d.pk!==undefined)P.off[d.pk]=!t.checked;else if(d.pq!==undefined)P.qty[d.pq]=Math.max(1,+t.value||1);else if(t.id==='ponb')P.onb=t.checked;else P.disc=Math.min(40,Math.max(0,+t.value||0));save();rProp();return}
+  if(d.tf!==undefined){S.tf=S.tf||{};S.tf[d.tf]=+t.value||1;save();rCat();rQ();rPip();return}
+  if(d.lf!==undefined){const l=(S.leads||[])[+d.l];if(l){l[d.lf]=d.lf==='st'?+t.value:t.value;save();if(d.lf==='st'||d.lf==='nd')rPip()}return}
+  if(d.k&&d.i!==undefined){S.items[d.i][d.k]=d.k==='n'?t.value:d.k==='sh'?Math.min(100,Math.max(0,+t.value||0)):+t.value||0;tot();save();rRent();rQ()}
+  else if(d.c){S.checks[d.c]=t.checked;save();rChk()}
+  else if(t.classList.contains('vc')){S.vc[d.i]=+t.value||0;save();rQ();rRent()}
+  else if(t.id==='tm'||t.id==='mf'||t.id==='com'||t.id==='fx'){S[t.id]=+t.value||0;save();rQ();rRent()}
+  else if(t.classList.contains('naf')){S.naData[d.k]=t.type==='checkbox'?t.checked:t.value;save();naScore()}
+  if(t.closest('#cot'))rQ();if(t.id==='ct'||t.id==='cv')rCat();if(t.closest('#rent'))rRent()});
+document.addEventListener('input',e=>{
+  if(e.target.closest('#cot'))rQ();
+  if(e.target.classList.contains('naf')){S.naData[e.target.dataset.k]=e.target.value;save();naScore()}});
+document.addEventListener('click',e=>{const t=e.target,d=t.dataset;
+  if(d.t){document.querySelectorAll('nav button,.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');$('#'+d.t).classList.add('on')}
+  if(d.t==='prop')rProp();
+  if(d.gen)document.querySelector('[data-t=prop]').click();
+  if(d.pcopy){const x=document.createElement('textarea');x.value=window._ptxt||'';document.body.appendChild(x);x.select();try{document.execCommand('copy');t.textContent='✓ Copiado'}catch(_){}x.remove();setTimeout(()=>t.textContent='📋 Copiar resumen',2000)}
+  if(d.ppip){const a=S.naData;if(!a.company){t.textContent='Falta el nombre de la empresa'}else{const c=a.cross||'';S.leads=S.leads||[];S.leads.push({c:a.company,ct:a.contact||'',ph:a.phone||'',ci:a.address||'',v:a.vert||'pyme',t:a.terr||'valle',p:recom().plan,u:naUsers(),fi:c.includes('México')?'Filial en México':c.includes('USA')?'Filial en USA':'',st:3,ns:'Seguimiento a los 3 días',nd:'',nt:'Desde Network Assessment',on:new Date().toISOString().slice(0,10)});save();rPip();t.textContent='✓ Registrado en Pipeline'}}
+  if(d.dp!==undefined)rDet(+d.dp);
+  if(d.padd){const c=$('#pc').value.trim();if(c){S.leads=S.leads||[];S.leads.push({c,ct:$('#pct').value.trim(),ph:$('#pph').value.trim(),ci:$('#pci').value.trim(),v:$('#pv').value,t:$('#pt').value,p:+$('#pp').value,u:+$('#pu').value||1,fi:$('#pfi').value,st:0,ns:'Llamar para agendar visita',nd:'',nt:'',on:new Date().toISOString().slice(0,10)});['pc','pct','pph','pci'].forEach(k=>$('#'+k).value='');save();rPip()}else $('#pc').focus()}
+  if(d.pdel!==undefined&&confirm('¿Eliminar este prospecto?')){S.leads.splice(+d.pdel,1);save();rPip()}
+  if(d.del!==undefined){S.items.splice(+d.del,1);rCost();save();rRent()}
+  if(d.add){S.items.push({c:d.add,n:'Nuevo concepto',usd:0,sh:d.add==='Administrativo'?50:100});rCost();save()}
+  if(d.esc){S.items.forEach(x=>{if(x.c==='Personal')x.sh=+d.esc});rCost();save();rRent();rQ()}
+  if(t.id==='cp'){const x=document.createElement('textarea');x.value=window._txt||'';document.body.appendChild(x);x.select();try{document.execCommand('copy');t.textContent='✓ Copiado'}catch(_){};x.remove();setTimeout(()=>t.textContent='📋 Copiar para WhatsApp',2000)}
+  if(t.id==='naExport'){const x=document.createElement('textarea');x.value=naExportText();document.body.appendChild(x);x.select();try{document.execCommand('copy');t.textContent='✓ Copiado'}catch(_){};x.remove();setTimeout(()=>t.textContent='📋 Copiar resumen',2000)}
+  if(t.id==='naClear'){if(confirm('¿Iniciar una nueva evaluación? Los datos actuales se perderán.')){S.naData={};S.prop=null;save();naFill();naScore()}}
+});
+
+$('#ct').innerHTML=$('#terr').innerHTML=opts(TR,'valle');$('#terr2').innerHTML=opts(TR,'nl');
+$('#cv').innerHTML=$('#vert').innerHTML=opts(VT,'pyme');
+$('#plan').innerHTML=PL.map((p,i)=>`<option value="${i}"${i===1?' selected':''}>${p.n}</option>`).join('');
+$('#adq').innerHTML=AD.concat(OT).map(a=>`<div style="display:flex;gap:8px;align-items:center;margin-bottom:6px"><span style="flex:1;font-size:.85rem">${a[1]} <span class="mu">(${a[2]})</span></span><input data-q="${a[0]}" type="number" min="0" value="0" style="width:80px"></div>`).join('');
+
+$('[data-k=terr]').innerHTML=opts(TR,'valle');$('[data-k=vert]').innerHTML=opts(VT,'pyme');$('#pv').innerHTML=opts(VT,'pyme');$('#pt').innerHTML=opts(TR,'valle');$('#pp').innerHTML=PL.map((p,i)=>`<option value="${i}"${i===1?' selected':''}>${p.n}</option>`).join('');
+$('#pf').innerHTML='<option value="all">Todas las etapas</option>'+ST.map((s,i)=>`<option value="${i}">${s}</option>`).join('');
+all();
+$('#lgo').onclick=doLogin;$('#lpass').addEventListener('keydown',ev=>{if(ev.key==='Enter')doLogin()});$('#lout').onclick=()=>logout();
+if(localStorage.getItem(TOKEN_KEY)){boot().catch(()=>{})}else{$('#login').style.display='flex';stat('Sin sesión')}
+</script></body></html>
